@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cine Critique | Global Movie & Drama Critics</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="pill">Global Entertainment Hub</p>
+        <h1>Cine Critique</h1>
+        <p>
+          Discover worldwide movie and drama reviews, get instant critic help from
+          our chatbot, read global entertainment headlines, and book your next
+          cinema show in minutes.
+        </p>
+        <a href="#booking" class="cta">Book Tickets Now</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel" id="demo">
+        <div class="panel__header">
+          <h2>Live Demo Controls</h2>
+          <button id="run-demo" class="secondary-btn">Run Auto Demo</button>
+        </div>
+        <p class="intro">
+          Click quick actions below to instantly test Cine Critique's core flows.
+        </p>
+        <div class="demo-actions">
+          <button data-demo="news">Refresh Global News</button>
+          <button data-demo="kdrama">Ask CineBot for K-Drama</button>
+          <button data-demo="book">Auto-fill Booking Form</button>
+        </div>
+        <div id="demo-status" class="demo-status" aria-live="polite"></div>
+      </section>
+
+      <section class="panel" id="news">
+        <div class="panel__header">
+          <h2>Movie News Around the Globe</h2>
+          <button id="refresh-news" class="secondary-btn">Refresh News</button>
+        </div>
+        <div id="news-grid" class="news-grid"></div>
+      </section>
+
+      <section class="panel" id="critics">
+        <h2>Critic System (Movies + Global Dramas)</h2>
+        <p class="intro">
+          Explore critic ratings and audience sentiment across films and popular
+          drama regions, including K-Drama, C-Drama, Pakistani, and Turkish shows.
+        </p>
+
+        <div id="critic-grid" class="critic-grid"></div>
+      </section>
+
+      <section class="panel" id="booking">
+        <h2>Movie Ticket Booking</h2>
+        <form id="booking-form" class="booking-form">
+          <label>
+            Full Name
+            <input type="text" name="name" placeholder="Alex Johnson" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="alex@mail.com" required />
+          </label>
+          <label>
+            Select Title
+            <select name="title" id="title-select" required></select>
+          </label>
+          <label>
+            Date
+            <input type="date" name="date" required />
+          </label>
+          <label>
+            Tickets
+            <input type="number" name="tickets" min="1" max="10" value="2" required />
+          </label>
+          <button type="submit">Confirm Booking</button>
+        </form>
+        <div id="booking-result" class="booking-result" aria-live="polite"></div>
+      </section>
+    </main>
+
+    <aside class="chatbot" aria-label="Cine Critique chatbot">
+      <button id="toggle-chat" class="chatbot__toggle" aria-expanded="false">
+        CineBot 💬
+      </button>
+      <div id="chat-window" class="chatbot__window" hidden>
+        <div class="chatbot__messages" id="chat-messages">
+          <p class="bot-msg">
+            Hi! I'm CineBot. Ask for movie picks, drama recommendations, or booking
+            tips.
+          </p>
+        </div>
+        <form id="chat-form" class="chatbot__form">
+          <input
+            type="text"
+            id="chat-input"
+            placeholder="Try: Recommend a Turkish drama"
+            required
+          />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </aside>
+
+    <footer>
+      <p>© <span id="year"></span> Cine Critique • Global critics, global stories.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
